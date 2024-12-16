@@ -23,7 +23,8 @@ if (
     (gameState[2] === gameState[5] && gameState[5] === gameState[8]) || // Right column
     (gameState[0] === gameState[4] && gameState[4] === gameState[8]) || // Diagonal top-left to bottom-right
     (gameState[2] === gameState[4] && gameState[4] === gameState[6])    // Diagonal top-right to bottom-left
-) {      if (omove) {
+) {      
+    if (omove) {
         console.log("X Wins");
       } else {
         console.log("O Wins");
