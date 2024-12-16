@@ -14,8 +14,16 @@ let rl = readline.createInterface({
     console.log(" "+gameState[6]+" | "+gameState[7]+" | "+gameState[8]);
   }
   function testWin() {
-    if ( (gameState[0] === gameState[1] && gameState[1] === gameState[2]) || (gameState[0] === gameState[3] && gameState[3] === gameState[6]) ||(gameState[8] === gameState[7] && gameState[7] === gameState[6]) ||(gameState[8] === gameState[5] && gameState[5] === gameState[2]) ||(gameState[0] === gameState[4] && gameState[4] === gameState[8]) ||(gameState[2] === gameState[4] && gameState[4] === gameState[6]) ) {
-      if (omove) {
+if (
+    (gameState[0] === gameState[1] && gameState[1] === gameState[2]) || // Top row
+    (gameState[3] === gameState[4] && gameState[4] === gameState[5]) || // Middle row
+    (gameState[6] === gameState[7] && gameState[7] === gameState[8]) || // Bottom row
+    (gameState[0] === gameState[3] && gameState[3] === gameState[6]) || // Left column
+    (gameState[1] === gameState[4] && gameState[4] === gameState[7]) || // Middle column
+    (gameState[2] === gameState[5] && gameState[5] === gameState[8]) || // Right column
+    (gameState[0] === gameState[4] && gameState[4] === gameState[8]) || // Diagonal top-left to bottom-right
+    (gameState[2] === gameState[4] && gameState[4] === gameState[6])    // Diagonal top-right to bottom-left
+) {      if (omove) {
         console.log("X Wins");
       } else {
         console.log("O Wins");
