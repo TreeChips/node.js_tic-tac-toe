@@ -39,6 +39,9 @@ let rl = readline.createInterface({
     }
     logState();
     testWin();
+      if (takenMove.length == 9) {
+          console.log("Tie");
+          rl.close();
   }
   logState()
   rl.on('line', (input) => {
