@@ -6,7 +6,7 @@ let rl = readline.createInterface({
   gameState = [0, 1, 2, 3, 4, 5,6,7,8]
   takenMoves = [];
   omove = true;
-  function logState(n) {
+  function logState() {
     console.log(" "+gameState[0]+" | "+gameState[1]+" | "+gameState[2]);
     console.log("-----------");
     console.log(" "+gameState[3]+" | "+gameState[4]+" | "+gameState[5]);
@@ -23,7 +23,7 @@ let rl = readline.createInterface({
       rl.close();
     }
   }
-  function logMove() {
+  function logMove(n) {
     takenMoves.push(n);
     if (omove) {
       gameState[n] = "O"
