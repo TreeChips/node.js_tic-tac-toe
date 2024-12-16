@@ -6,7 +6,7 @@ let rl = readline.createInterface({
   gameState = [0, 1, 2, 3, 4, 5,6,7,8]
   takenMoves = [];
   omove = true;
-  function logState() {
+  function logState(n) {
     console.log(" "+gameState[0]+" | "+gameState[1]+" | "+gameState[2]);
     console.log("-----------");
     console.log(" "+gameState[3]+" | "+gameState[4]+" | "+gameState[5]);
@@ -50,7 +50,7 @@ let rl = readline.createInterface({
       console.log("please input a number");
       logState();
     } else if (!takenMoves.includes(n) && n > -1 && n < 9) {
-      logMove()
+      logMove(n)
     } else {
       console.log("please input a valid number");
       logState();
